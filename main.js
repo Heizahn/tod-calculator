@@ -70,6 +70,13 @@ function addBtn(str) {
 		screenInput.value = ""
 		opt = false
 	}
+
+	if (screenInput.value.includes(".")) {
+		let decimal = document.getElementById("decimal")
+
+		decimal.onclick = null
+	}
+
 	screenInput.value += str
 
 }

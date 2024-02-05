@@ -9,26 +9,25 @@
 <body>
 
 	<div class="calculator-container">
-		<input type="text" placeholder="2+2">
+		<input id="screen" type="text" placeholder="2+2">
 		<div class="container-btns">
-			<button>Del</button>
-			<button>/</button>
-			<button>*</button>
-			<button>-</button>
-			<button>7</button>
-			<button>8</button>
-			<button>9</button>
-			<button class="suma">+</button>
-			<button>4</button>
-			<button>5</button>
-			<button>6</button>
-			<button>1</button>
-			<button>2</button>
-			<button>3</button>
-			<button class="enter">=</button>
-			<button class="cero">0</button>
-			<button>.</button>
-
+			<button onclick="clearScreen()">Del</button>
+			<button onclick="addBtn('/')">/</button>
+			<button onclick="addBtn('*')">*</button>
+			<button onclick="addBtn('-')">-</button>
+			<button onclick="addBtn('7')">7</button>
+			<button onclick="addBtn('8')">8</button>
+			<button onclick="addBtn('9')">9</button>
+			<button class="suma" onclick="addBtn('+')">+</button>
+			<button onclick="addBtn('4')">4</button>
+			<button onclick="addBtn('5')">5</button>
+			<button onclick="addBtn('6')">6</button>
+			<button onclick="addBtn('1')">1</button>
+			<button onclick="addBtn('2')">2</button>
+			<button onclick="addBtn('3')">3</button>
+			<button class="enter" onclick="operate()">=</button>
+			<button class="cero" onclick="addBtn('0')">0</button>
+			<button onclick="addBtn('.')">.</button>
 		</div>
 	</div>
 	<script src="./main.js"></script>

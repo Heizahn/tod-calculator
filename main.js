@@ -1,3 +1,6 @@
+const screenInput = document.getElementById("screen")
+
+
 function suma(num1, num2) {
 	return num1 + num2
 }
@@ -16,7 +19,10 @@ function divi(num1, num2) {
 	return num1 / num2
 }
 
-function operate(num1, operator, num2) {
+function operate() {
+	let num1, operator, num2 = ""
+
+
 	if (operator === "+") {
 		suma(Number(num1), Number(num2))
 	}
@@ -32,4 +38,17 @@ function operate(num1, operator, num2) {
 	if (operator === "/") {
 		divi(Number(num1), Number(num2))
 	}
+
+	console.log(screenInput.value)
 }
+
+
+function addBtn(str) {
+	screenInput.value += str
+
+}
+
+function clearScreen() {
+	return screenInput.value = ""
+}
+

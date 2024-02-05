@@ -16,3 +16,20 @@ function divi(num1, num2) {
 	return num1 / num2
 }
 
+function operate(num1, operator, num2) {
+	if (operator === "+") {
+		suma(Number(num1), Number(num2))
+	}
+
+	if (operator === "-") {
+		resta(Number(num1), Number(num2))
+	}
+
+	if (operator === "*") {
+		multi(Number(num1), Number(num2))
+	}
+
+	if (operator === "/") {
+		divi(Number(num1), Number(num2))
+	}
+}

@@ -9,16 +9,16 @@
 <body>
 
 	<div class="calculator-container">
-		<input id="screen" type="text" placeholder="2+2">
+		<input id="screen" type="text">
 		<div class="container-btns">
 			<button onclick="clearScreen()">Del</button>
-			<button onclick="addBtn('/')">/</button>
-			<button onclick="addBtn('*')">*</button>
-			<button onclick="addBtn('-')">-</button>
+			<button onclick="operator('/')">/</button>
+			<button onclick="operator('*')">*</button>
+			<button onclick="operator('-')">-</button>
 			<button onclick="addBtn('7')">7</button>
 			<button onclick="addBtn('8')">8</button>
 			<button onclick="addBtn('9')">9</button>
-			<button class="suma" onclick="addBtn('+')">+</button>
+			<button class="suma" onclick="operator('+')">+</button>
 			<button onclick="addBtn('4')">4</button>
 			<button onclick="addBtn('5')">5</button>
 			<button onclick="addBtn('6')">6</button>

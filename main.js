@@ -1,4 +1,8 @@
 const screenInput = document.getElementById("screen")
+let operation
+let opt = false
+let n1 = ""
+let n2 = ""
 
 
 function suma(num1, num2) {
@@ -20,65 +24,59 @@ function divi(num1, num2) {
 }
 
 function operate() {
-
-
-	let Add = screenInput.value.includes("+")
-	let Subtract = screenInput.value.includes("-")
-	let Multiply = screenInput.value.includes("*")
-	let Divide = screenInput.value.includes("/")
-
-	if (Add) {
-		let arrAdd = screenInput.value.split("+")
-
-		let num1 = Number(arrAdd[0])
-		let num2 = Number(arrAdd[1])
-
-		let result = suma(num1, num2)
-
-		return screenInput.value = result
+	if (n1 !== "") {
+		n2 = screenInput.value
 	}
+	let result = 0
+	switch (operation) {
+		case "+":
+			result = suma(Number(n1), Number(n2))
+			n1 = result
+			n2 = ""
+			return screenInput.value = result.toFixed(2)
 
-	if (Subtract) {
-		let arr = screenInput.value.split("-")
+		case "-":
+			result = resta(Number(n1), Number(n2))
+			n1 = result
+			n2 = ""
+			return screenInput.value = result.toFixed(2)
 
-		let num1 = Number(arr[0])
-		let num2 = Number(arr[1])
+		case "*":
+			result = multi(Number(n1), Number(n2))
+			n1 = result
+			n2 = ""
+			return screenInput.value = result.toFixed(2)
 
-		let result = resta(num1, num2)
-
-		return screenInput.value = result
+		case "/":
+			result = divi(Number(n1), Number(n2))
+			n1 = result
+			n2 = ""
+			return screenInput.value = result.toFixed(2)
 	}
+}
 
-	if (Multiply) {
-		let arr = screenInput.value.split("*")
-
-		let num1 = Number(arr[0])
-		let num2 = Number(arr[1])
-
-		let result = multi(num1, num2)
-
-		return screenInput.value = result
+function operator(str) {
+	operation = str
+	if (n1 === "") {
+		n1 = screenInput.value
 	}
+	opt = true
 
-	if (Divide) {
-		let arr = screenInput.value.split("/")
-
-		let num1 = Number(arr[0])
-		let num2 = Number(arr[1])
-
-		let result = divi(num1, num2)
-
-		return screenInput.value = result
-	}
 }
 
 
 function addBtn(str) {
+	if (opt) {
+		screenInput.value = ""
+		opt = false
+	}
 	screenInput.value += str
 
 }
 
 function clearScreen() {
+	n1 = ""
+	n2 = ""
 	return screenInput.value = ""
 }
 

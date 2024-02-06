@@ -1,4 +1,5 @@
 const screenInput = document.getElementById("screen")
+let decimal = document.getElementById("decimal")
 let operation
 let opt = false
 let n1 = ""
@@ -66,18 +67,24 @@ function operator(str) {
 
 
 function addBtn(str) {
+
 	if (opt) {
 		screenInput.value = ""
 		opt = false
 	}
 
 	if (screenInput.value.includes(".")) {
-		let decimal = document.getElementById("decimal")
-
 		decimal.onclick = null
+	} else {
+		decimal.onclick = function () {
+			screenInput.value += "."
+		}
 	}
 
+
+
 	screenInput.value += str
+	console.log(screenInput.value)
 
 }
 

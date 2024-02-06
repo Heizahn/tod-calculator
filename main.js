@@ -21,7 +21,7 @@ function multi(num1, num2) {
 function divi(num1, num2) {
 	if (num2 === 0) return "Infinity"
 
-	return num1 / num2
+	return (num1 / num2).toFixed(2)
 }
 
 function operate() {
@@ -52,16 +52,26 @@ function operate() {
 			result = divi(Number(n1), Number(n2))
 			n1 = result
 			n2 = ""
-			return screenInput.value = result.toFixed(2)
+			return screenInput.value = result
 	}
 }
 
 function operator(str) {
+
+	if (n1 !== "") {
+		opt = true
+	}
+
+	if (opt) {
+		operate()
+	}
+
 	operation = str
+	opt = true
 	if (n1 === "") {
 		n1 = screenInput.value
 	}
-	opt = true
+
 
 }
 
@@ -81,10 +91,7 @@ function addBtn(str) {
 		}
 	}
 
-
-
 	screenInput.value += str
-	console.log(screenInput.value)
 
 }
 
